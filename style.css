@@ -1,0 +1,262 @@
+@font-face {
+  font-family: BOLDONE;
+  src: url(Acumin-BdPro.ttf);
+}
+
+@font-face {
+  font-family: Lightone;
+  src: url(Uni-Sans-Thin.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#main {
+  position: relative;
+  overflow: hidden;
+}
+
+#page1 {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+}
+
+#center {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: BOLDONE;
+}
+
+.top {
+  position: absolute;
+  width: 20vw;
+  color: #bababa;
+  font-family: Lightone;
+  font-weight: bold; /* Adjusted font weight */
+  top: 300px;
+  left: 38vw;
+}
+
+.middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  color: #DDDDDD;
+}
+
+.bottom {
+  position: absolute;
+  font-family: Lightone;
+  display: flex;
+  bottom: 40vh;
+  left: 58vw;
+  color: #a3a3a3;
+}
+
+#name {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: BOLDONE;
+  font-size: 25px;
+  color: #ffffff;
+  z-index: 10;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 23px;
+}
+
+#lfbottom {
+  position: absolute;
+  bottom: 5vh;
+  right: 46vw;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* ensure it's above other content if necessary */
+}
+
+#lfbottom img {
+  margin: 7px 10px; /* optional: add spacing between images */
+  max-width: 60px; /* optional: adjust image size */
+  height: auto; /* maintain aspect ratio */
+}
+#lfbottom img[alt="LinkedIn"] {
+  position: relative;
+  max-width: 68px; /* adjust LinkedIn image size */
+  left: -0.70vw;
+}
+
+#lfbottom img[alt="Instagram"] {
+  max-width: 40px; /* adjust Instagram image size */
+}
+
+#lfbottom img[alt="Email"] {
+  max-width: 40px; /* adjust Email image size */
+}
+
+#topright {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  color: rgb(126, 126, 126);
+  z-index: 23;
+  font-family: Lightone;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Space between elements */
+}
+
+#topright h4 {
+  margin-right: 20px; 
+  cursor: pointer;/* Adjust individual margins as needed */
+}
+
+#topright h4:hover{
+  color : white
+}
+
+.loading-screen {
+  z-index: 200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: white;
+  pointer-events: none;
+}
+
+.counter {
+  position: fixed;
+  left: 50px;
+  bottom: 50px;
+  display: flex;
+  height: 100px;
+  font-size: 100px;
+  line-height: 102px;
+  clip-path: polygon(0 0,100% 0,100% 100px,0 100px);
+  font-weight: 400;
+  overflow: hidden; /* Ensure content doesn't shift */
+}
+
+.counter-1,
+.counter-2,
+.counter-3 {
+  position: relative;
+  top: -15px; /* Adjust as needed */
+}
+
+.num,
+.numoffset1,
+.numoffset2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.numoffset1 {
+  left: 100%; /* Move "1" outside the container */
+  transform: translateX(-100%); /* Slide "1" into view */
+}
+
+.loader {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 50px;
+  transform: translate(-50%,-50%);
+  display: flex;
+  background: rgb(80,80,80);
+}
+
+.loader1 {
+  position: relative;
+  background: #fff;
+  width: 200px;
+}
+
+.loader2 {
+  position: relative;
+  width: 100px;
+  background: #fff;
+}
+ 
+/* Styling for the form container */
+form {
+  position: absolute; /* Absolute positioning to place it freely within the parent */
+  top: 70%; /* Position the form 70% down from the top of the parent element */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center alignment trick */
+  display: flex; /* Use flexbox for easy alignment of input and button */
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for form */
+  padding: 10px 20px; /* Padding around the form */
+  border-radius: 10px; /* Rounded corners */
+  z-index: 50; /* Ensure it appears above other content */
+}
+
+/* Styling for the input field */
+form input[type="email"] {
+  padding: 10px;
+  border: 1px solid #555555;
+  border-radius: 5px;
+  font-size: 19px;
+  margin-right: 10px; /* Space between input and button */
+  width: 250px; /* Fixed width for the input */
+  transition: border-color 0.3s, background-color 0.3s; /* Smooth transition for focus */
+}
+
+/* Change border color on focus */
+form input[type="email"]:focus {
+  border-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.2); /* Slightly more transparent on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Reuse the button styling with modifications for form button */
+form button {
+  height: 5vh; /* Make the button match the input height */
+  padding: 0 20px; /* Padding inside the button */
+  border: none;
+  background-color: #333; /* Dark background */
+  color: rgb(236, 236, 236); /* White text */
+  cursor: pointer;
+  font-size: 16px; /* Adjusted font size */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+}
+
+form button:hover {
+  background-color: #555; /* Slightly lighter on hover */
+  color: #ddd; /* Lighter text on hover */
+}
+
+#lastnote{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 80%;
+  left: 39.5%;
+  font-family: LIGHTONE;
+  color: #64757a;
+}
